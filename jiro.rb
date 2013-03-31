@@ -41,6 +41,9 @@ def parse(str)
             raise "Parse error"
         end
     end
+    if !stack.empty? then
+        raise "Parse error"
+    end
 end
 
 parse(gets.chomp.encode("UTF-8"))
