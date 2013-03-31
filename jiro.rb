@@ -27,6 +27,9 @@ def parse(str)
             pc += "少なめ".length
         elsif str[pc...str.length] =~ /^麺硬/
             if mem[cmem] == 0 then
+                if str.index("麺柔", pc) == nil then
+                    raise "Parse error"
+                end
                 pc = str.index("麺柔", pc) + "麺柔".length
             else
                 stack.push pc
